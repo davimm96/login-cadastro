@@ -1,0 +1,140 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none; }
+
+button {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.397);
+  background-color: #f1f1f1;
+  color: orange;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  padding: 1px 3px 1px 3px; }
+  button:hover {
+    background-color: #d8d8d8;
+    transition-duration: 0.5s; }
+  button a {
+    color: orange; }
+
+.centraliza, .pai {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.borda, button, .pai .formularioAcesso .g-recaptcha {
+  border: 0.5px solid #afafaf; }
+
+.opcoesAcessoDesign, .pai .formularioAcesso .opcoesAcesso, .pai .erroAcesso {
+  text-align: center;
+  margin-top: 10px; }
+
+.pai {
+  flex-wrap: wrap;
+  align-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #5d5dff;
+  color: white; }
+  .pai .formularioAcesso {
+    margin: 10px;
+    padding: 17px 7px 17px 7px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.397);
+    background-color: rgba(0, 0, 0, 0.452);
+    display: block;
+    position: relative;
+    text-align: center; }
+    .pai .formularioAcesso #btnLG {
+      width: 172px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+    .pai .formularioAcesso p {
+      margin: 0px 5px 5px 5px;
+      width: 322px; }
+    .pai .formularioAcesso input {
+      margin: 5px;
+      padding: 5px;
+      width: 290px; }
+    .pai .formularioAcesso .g-recaptcha {
+      background-color: #f1f1f1;
+      color: orange;
+      transition-duration: 0.5s;
+      cursor: pointer;
+      box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.397);
+      padding: 7px;
+      font-size: 15px;
+      width: 302px;
+      margin: 5px; }
+      .pai .formularioAcesso .g-recaptcha:hover {
+        background-color: #d8d8d8;
+        transition-duration: 0.5s; }
+    .pai .formularioAcesso .opcoesAcesso p {
+      margin: 0 auto;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      width: 237px;
+      text-align: center; }
+    .pai .formularioAcesso .senha {
+      width: 252px;
+      position: relative;
+      right: 1px; }
+    .pai .formularioAcesso .verSenha {
+      display: inline;
+      cursor: pointer;
+      background-color: white;
+      height: 60px;
+      padding: 5px;
+      position: relative;
+      top: 1px;
+      right: 5px; }
+    .pai .formularioAcesso h1 {
+      text-shadow: 4px 4px 4px orange;
+      font-size: 35px; }
+  .pai footer {
+    width: 100%; }
+  .pai .erroAcesso {
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.623);
+    font-size: 20px;
+    width: 100%;
+    height: 39px; }
+    .pai .erroAcesso p {
+      color: red;
+      border: solid 1px red;
+      background-color: rgba(255, 0, 0, 0.452);
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.397);
+      margin: 4px; }
+    .pai .erroAcesso .cadastroSucesso {
+      border: #00fb00 1px solid;
+      color: #00fb00;
+      background-color: rgba(0, 128, 0, 0.473); }
+
+#telaLogado {
+  margin: 10px; }
+
+@media (max-width: 349px) {
+  .pai .formularioAcesso {
+    margin: 0px;
+    padding: 17px 0px 17px 0px;
+    width: 97%; }
+
+  .pai .formularioAcesso input {
+    width: 192px !important; }
+
+  .pai .formularioAcesso .senha {
+    width: 156px !important; }
+
+  .pai .formularioAcesso .g-recaptcha {
+    width: 206px !important; }
+
+  .pai .formularioAcesso p {
+    width: 237px;
+    font-size: 12px;
+    margin: 0 auto;
+    margin-bottom: 5px; } }
+
+/*# sourceMappingURL=acesso.css.map */

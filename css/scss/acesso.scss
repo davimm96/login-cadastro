@@ -1,0 +1,203 @@
+//Mixin
+@mixin espaco($marg, $pad){
+    margin: $marg;
+    padding: $pad;
+}
+
+@mixin escurece($bg, $colr){
+    background-color: $bg;
+    color: $colr;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($bg, 10%);
+        transition-duration: 0.5s;
+    }
+}
+
+@mixin bs($a, $b, $c){
+    box-shadow: $a $b $c rgba(0, 0, 0, 0.397);
+}
+
+@mixin ts($a, $b, $c){
+    text-shadow: $a $b $c rgba(0, 0, 0, 0.623);
+}
+
+//Geral
+* {
+    @include espaco(0px, 0px);
+    text-decoration: none;
+}
+
+button {
+    @extend .borda;
+    @include bs(4px, 4px, 4px);
+    @include escurece(rgb(241, 241, 241), orange);
+    padding: 1px 3px 1px 3px;
+    
+    a {color: orange;}
+}
+
+//Classe reutilizaveis
+.centraliza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borda {
+    border: .5px solid rgb(175, 175, 175);
+}
+
+.opcoesAcessoDesign {
+    text-align: center;
+    margin-top: 10px;
+}
+
+//Acesso
+.pai {
+    @extend .centraliza;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: rgb(93, 93, 255);
+    color: white;
+    
+    .formularioAcesso {
+        @include espaco(10px, 17px 7px 17px 7px);
+        @include bs(8px, 8px, 8px);
+        background-color: rgba(0, 0, 0, 0.452);
+        display: block;
+        position: relative;
+        text-align: center;
+
+        #btnLG {
+            width: 172px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 0px 5px 5px 5px;
+            width: 322px
+        }
+
+        input {
+            @include espaco(5px, 5px);
+            width: 290px;
+        }
+
+        .g-recaptcha {
+            @extend .borda;
+            @include escurece(rgb(241, 241, 241), orange);
+            @include bs(8px, 8px, 8px);
+            padding: 7px;
+            font-size: 15px;
+            width: 302px;
+            margin: 5px;
+        }
+
+        .opcoesAcesso {
+            @extend .opcoesAcessoDesign;
+
+            p{
+                margin: 0 auto;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                width: 237px;
+                text-align: center;
+            }
+        }
+
+        .senha {
+            width: 252px;
+            position: relative;
+            right: 1px;
+        }
+
+        .verSenha {
+            display: inline;
+            cursor: pointer;
+            background-color: white;
+            height: 60px;
+            padding: 5px;
+            position: relative;
+            top: 1px;
+            right: 5px;
+        }
+
+        h1{
+            text-shadow: 4px 4px 4px orange;
+            font-size: 35px;
+        }
+    }
+
+    footer{
+        width: 100%;
+    }
+
+    .erroAcesso {
+        @extend .opcoesAcessoDesign;
+        @include ts(5px, 5px, 5px);
+        font-size: 20px;
+        width: 100%;
+        height: 39px;
+
+        p {
+            color: red;//rgb(158, 10, 10);
+            border: solid 1px red;
+            background-color: rgba(255, 0, 0, 0.452);
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+            @include bs(4px, 4px, 4px);
+            margin: 4px;
+        }
+
+        .cadastroSucesso {
+            border: #00fb00 1px solid;
+            color: #00fb00;
+            background-color: rgba(0, 128, 0, 0.473);
+        }
+     }
+}
+
+//Logado
+#telaLogado {
+    margin: 10px;
+}
+
+@media(max-width:349px) {
+    .pai .formularioAcesso {
+        margin: 0px;
+        padding: 17px 0px 17px 0px;
+        width: 97%;
+    }
+    .pai .formularioAcesso input {
+        width: 192px!important;
+    }
+
+    .pai .formularioAcesso .senha{
+        width: 156px!important;
+    } 
+
+    .pai .formularioAcesso .g-recaptcha {
+        width: 206px!important;
+    }
+
+    .pai .formularioAcesso p {
+        width: 237px;
+        font-size: 12px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
